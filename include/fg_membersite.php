@@ -371,8 +371,8 @@ class FGMembersite
         }
         $row = mysql_fetch_assoc($result);
         
-        
-        $_SESSION['name_of_user']  = $row['name'];
+        //$_SESSION['name_of_user']  = $row['name'];
+		$_SESSION['name_of_user']  = $row['username'];
         $_SESSION['email_of_user'] = $row['email'];
         return true;
     }
