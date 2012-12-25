@@ -59,10 +59,12 @@
                       <li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $fgmembersite->UserFullName(); ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Setting</a></li>
-                          <li class="divider"></li>
-						  <li><a href='?page=access-controlled'>members-only</a></li>
-						  <li><a href='?page=change-pwd'>Change password</a></li>
+                          <?php if ($_SESSION['userlevel'] == 'User Level1') { ?>
+                            <li><a href="?page=settings">Setting</a></li>
+                            <li class="divider"></li>
+                          <?php } ?>
+                            <li><a href='?page=access-controlled'>members-only</a></li>
+                            <li><a href='?page=change-pwd'>Change password</a></li>
                           <li><a href="?page=logout">Logout</a></li>
                         </ul>
                       </li>

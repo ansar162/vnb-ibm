@@ -357,10 +357,10 @@ class FGMembersite
             return false;
         }          
         $username = $this->SanitizeForSQL($username);
-        //$pwdmd5 = md5($password);
-		$pwdmd5 = $password;
-        //$qry = "Select name, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
-		$qry = "Select username from $this->tablename where username='$username' and password='$pwdmd5'";
+        $pwdmd5 = md5($password);
+
+        //$qry = "Select name, email, userlevel, username from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y'";
+        $qry = "Select name, email, userlevel, username from $this->tablename where username='$username' and password='$pwdmd5'";
         
         $result = mysql_query($qry,$this->connection);
         
@@ -371,8 +371,9 @@ class FGMembersite
         }
         $row = mysql_fetch_assoc($result);
         
-        //$_SESSION['name_of_user']  = $row['name'];
-		$_SESSION['name_of_user']  = $row['username'];
+        $_SESSION['name_of_user']  = $row['name'];
+	$_SESSION['username']  = $row['username'];
+        $_SESSION['userlevel']  = $row['userlevel'];
         $_SESSION['email_of_user'] = $row['email'];
         return true;
     }
