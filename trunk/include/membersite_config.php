@@ -17,7 +17,7 @@ $fgmembersite->InitDB(/*hostname*/'localhost',
                       /*username*/'root',
                       /*password*/'ansar',
                       /*database name*/'ibmdb_new',
-                      /*table name*/'users');
+                      /*table name*/'users2');
 
 //For better security. Get a random string from this link: http://tinyurl.com/randstr
 // and put it here
