@@ -34,7 +34,7 @@ if(!$fgmembersite->CheckLogin())
     <meta name="description" content="">
     <meta name="author" content="">
 
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="assets/jquery/jquery.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	
     <!-- Le styles -->
