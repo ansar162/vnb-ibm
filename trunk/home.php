@@ -92,9 +92,9 @@ if(!$fgmembersite->CheckLogin())
 <div id="main-content" class="container">
 	<?php 
 		if (isset($_GET['page']))
-			include($_GET['page'].'.php');
+			include('src/'.$_GET['page'].'.php');
 		else
-			include("content.php");
+			include("src/content.php");
 		?>
 </div> <!-- /container -->
 
