@@ -91,10 +91,13 @@ if(!$fgmembersite->CheckLogin())
 <?php include("header.php");?>
 <div id="main-content" class="container">
 	<?php 
-		if (isset($_GET['page']))
+		if (isset($_GET['page']) && file_exists('src/'.$_GET['page'].'.php')){
 			include('src/'.$_GET['page'].'.php');
-		else
+                }
+		else{
+                        echo('Incorrect URL: File not found.');
 			include("src/content.php");
+                }
 		?>
 </div> <!-- /container -->
 
